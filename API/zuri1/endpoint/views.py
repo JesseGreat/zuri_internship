@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import JsonResponse
 import datetime
-from urllib.parse import quote_plus
+# from urllib.parse import quote_plus
 
 def Endpoint(request):
     # Get query parameters
@@ -20,7 +20,7 @@ def Endpoint(request):
     # Construct GitHub URLs
     github_repo_url = 'https://github.com/JesseGreat/zuri_internship'
     github_file_url = f'{github_repo_url}/blob/main/API/zuri1/endpoint/views.py'
-    github_file_url = quote_plus(github_file_url)  # URL-encode
+    # github_file_url = quote_plus(github_file_url)  # URL-encode
 
     # Create the JSON response
     response_data = {
