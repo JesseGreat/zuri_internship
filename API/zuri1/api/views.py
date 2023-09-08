@@ -14,12 +14,12 @@ def Endpoint(request):
     current_day = datetime.datetime.now().strftime('%A')
 
     # Get current UTC time with validation of +/-2 minutes
-    current_utc_time = datetime.datetime.utcnow()
-    current_utc_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+    current_utc_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
 
     # Construct GitHub URLs
     github_repo_url = 'https://github.com/JesseGreat/zuri_internship'
-    github_file_url = f'{github_repo_url}/blob/main/API/zuri1/endpoint/views.py'
+    github_file_url = f'{github_repo_url}/blob/main/API/zuri1/api/views.py'
     # github_file_url = quote_plus(github_file_url)  # URL-encode
 
     # Create the JSON response
