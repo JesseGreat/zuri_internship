@@ -10,17 +10,15 @@ def Endpoint(request):
     slack_name = request.GET.get('slack_name')
     track = request.GET.get('track')
 
-    # Get current day of the week
+    # Get current day of the week in the specified format
     current_day = datetime.datetime.now().strftime('%A')
 
     # Get current UTC time with validation of +/-2 minutes
     current_utc_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
-
     # Construct GitHub URLs
     github_repo_url = 'https://github.com/JesseGreat/zuri_internship'
     github_file_url = f'{github_repo_url}/blob/main/API/zuri1/api/views.py'
-    # github_file_url = quote_plus(github_file_url)  # URL-encode
 
     # Create the JSON response
     response_data = {
