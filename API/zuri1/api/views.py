@@ -5,14 +5,13 @@ from django.http import JsonResponse
 import datetime
 # from urllib.parse import quote_plus
 
-
 def Endpoint(request):
     # Get query parameters
     slack_name = request.GET.get('slack_name')
     track = request.GET.get('track')
 
-    # Hardcode "Thursday" as the current day
-    current_day = "Thursday"
+    # Get current day of the week in the specified format
+    current_day = datetime.datetime.now().strftime('%A')
 
     # Get current UTC time with validation of +/-2 minutes
     current_utc_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
